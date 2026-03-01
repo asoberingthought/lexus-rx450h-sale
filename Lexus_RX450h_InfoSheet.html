@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>2015 Lexus RX 450h — For Sale</title>
+  <style>
+    /* ── Reset & Base ── */
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+      background: #eef1f6;
+      color: #111827;
+      font-size: 15px;
+      line-height: 1.5;
+    }
+
+    /* ── Colour palette ── */
+    /* Navy:  #0b1f3a  |  Blue:  #1a4f8f  |  Light blue: #e8f0fb  |  Cool gray: #eef1f6 */
+
+    /* ── Header ── */
+    header {
+      background: #0b1f3a;
+      color: white;
+      padding: 32px 48px 26px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      border-bottom: 3px solid #1a4f8f;
+    }
+    header h1 {
+      font-size: 1.85rem;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      color: #ffffff;
+    }
+    header .subtitle {
+      font-size: 0.82rem;
+      color: #8faecf;
+      margin-top: 5px;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+    header .price-box { text-align: right; }
+    header .price-box .plabel {
+      font-size: 0.7rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #8faecf;
+    }
+    header .price-box .price {
+      font-size: 2.1rem;
+      color: #ffffff;
+      font-weight: 700;
+      margin-top: 3px;
+      letter-spacing: -0.02em;
+    }
+    header .price-box .psub {
+      font-size: 0.72rem;
+      color: #8faecf;
+      margin-top: 4px;
+    }
+
+    /* ── Badge bar ── */
+    .badge-bar {
+      background: #1a4f8f;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 0;
+      padding: 0;
+    }
+    .badge-bar .badge {
+      color: #ffffff;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding: 10px 24px;
+      border-right: 1px solid rgba(255,255,255,0.2);
+    }
+    .badge-bar .badge:last-child { border-right: none; }
+
+    /* ── Photos ── */
+    .photos {
+      display: flex;
+      gap: 3px;
+      background: #0b1f3a;
+    }
+    .photos img {
+      width: 50%;
+      height: 300px;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* ── Content grid ── */
+    .content {
+      padding: 28px 48px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    /* ── Cards ── */
+    .card {
+      background: #ffffff;
+      border-radius: 4px;
+      padding: 24px 26px;
+      border: 1px solid #dbe3ed;
+    }
+    .card.full-width { grid-column: 1 / -1; }
+
+    .card h2 {
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #1a4f8f;
+      margin-bottom: 16px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid #1a4f8f;
+    }
+
+    /* ── Spec grid ── */
+    .spec-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px 24px; }
+    .spec-item .slabel {
+      font-size: 0.68rem;
+      color: #6b7280;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      font-weight: 600;
+    }
+    .spec-item .svalue {
+      font-size: 0.92rem;
+      font-weight: 600;
+      margin-top: 2px;
+      color: #111827;
+    }
+
+    /* ── Feature list ── */
+    .highlight-list { list-style: none; }
+    .highlight-list li {
+      padding: 7px 0;
+      border-bottom: 1px solid #f1f5f9;
+      font-size: 0.88rem;
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      color: #1f2937;
+    }
+    .highlight-list li:last-child { border-bottom: none; }
+    .highlight-list li::before {
+      content: '✓';
+      color: #1a4f8f;
+      font-weight: 700;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    /* ── Interior grid ── */
+    .interior-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .interior-item {
+      padding: 12px 16px;
+      background: #f0f6ff;
+      border-radius: 3px;
+      border-left: 3px solid #1a4f8f;
+    }
+    .interior-item .ilabel {
+      font-size: 0.67rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #6b7280;
+      font-weight: 600;
+    }
+    .interior-item .ivalue {
+      font-size: 0.86rem;
+      margin-top: 4px;
+      color: #1f2937;
+      line-height: 1.45;
+    }
+
+    /* ── Maintenance table ── */
+    .maintenance-table { width: 100%; border-collapse: collapse; font-size: 0.84rem; }
+    .maintenance-table th {
+      background: #0b1f3a;
+      color: #8faecf;
+      text-align: left;
+      padding: 10px 14px;
+      font-size: 0.67rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+    .maintenance-table td {
+      padding: 10px 14px;
+      border-bottom: 1px solid #e5ebf2;
+      vertical-align: top;
+      line-height: 1.5;
+      color: #1f2937;
+    }
+    .maintenance-table tr:last-child td { border-bottom: none; }
+    .maintenance-table tr:nth-child(even) td { background: #f8fafc; }
+    .maintenance-table td:first-child { font-weight: 600; white-space: nowrap; color: #374151; }
+    .maintenance-table td:nth-child(2) { white-space: nowrap; color: #6b7280; }
+
+    /* ── Inline badges ── */
+    .tag {
+      display: inline-block;
+      font-size: 0.67rem;
+      font-weight: 700;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      padding: 2px 9px;
+      border-radius: 3px;
+      vertical-align: middle;
+    }
+    .tag-green  { background: #d1fae5; color: #065f46; }
+    .tag-blue   { background: #dbeafe; color: #1e3a8a; }
+    .tag-navy   { background: #0b1f3a; color: #93c5fd; }
+
+    /* ── Disclosure box ── */
+    .disclosure-box {
+      background: #f8fafc;
+      border: 1px solid #dbe3ed;
+      border-left: 4px solid #1a4f8f;
+      padding: 18px 22px;
+      border-radius: 0 4px 4px 0;
+    }
+    .disclosure-box h3 {
+      font-size: 0.67rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #1a4f8f;
+      margin-bottom: 14px;
+    }
+    .disclosure-box ul { list-style: none; }
+    .disclosure-box ul li {
+      font-size: 0.86rem;
+      padding: 9px 0;
+      border-bottom: 1px solid #e5ebf2;
+      line-height: 1.55;
+      color: #374151;
+      padding-left: 14px;
+      position: relative;
+    }
+    .disclosure-box ul li:last-child { border-bottom: none; }
+    .disclosure-box ul li::before {
+      content: '—';
+      position: absolute;
+      left: 0;
+      color: #1a4f8f;
+      font-weight: 700;
+    }
+
+    /* ── Footer ── */
+    .contact-strip {
+      background: #0b1f3a;
+      color: #8faecf;
+      text-align: center;
+      padding: 18px 48px;
+      font-size: 0.82rem;
+      margin-top: 0;
+      border-top: 3px solid #1a4f8f;
+    }
+    .contact-strip strong { color: #ffffff; }
+    .contact-strip .vin {
+      margin-top: 5px;
+      font-size: 0.71rem;
+      color: #4a6f96;
+      letter-spacing: 0.04em;
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 720px) {
+      header { flex-direction: column; gap: 18px; padding: 24px; }
+      .content { grid-template-columns: 1fr; padding: 20px 20px; }
+      .card.full-width { grid-column: 1; }
+      .photos { flex-direction: column; }
+      .photos img { width: 100%; height: 220px; }
+      .interior-grid { grid-template-columns: 1fr; }
+      .badge-bar .badge { padding: 9px 14px; font-size: 0.7rem; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div>
+    <h1>2015 Lexus RX 450h</h1>
+    <div class="subtitle">Berkeley, CA &nbsp;·&nbsp; Private Party Sale &nbsp;·&nbsp; June 2026</div>
+  </div>
+  <div class="price-box">
+    <div class="plabel">Asking Price</div>
+    <div class="price">$17,000</div>
+    <div class="psub">Private party &nbsp;·&nbsp; Below-average mileage for year</div>
+  </div>
+</header>
+
+<div class="badge-bar">
+  <div class="badge">⚡ Hybrid AWD</div>
+  <div class="badge">~104,000–105,000 miles</div>
+  <div class="badge">✓ Smog Passed Jun 2025</div>
+  <div class="badge">Full Service Records</div>
+  <div class="badge">Rear Tyre: 40K Mile Warranty</div>
+</div>
+
+<div class="photos">
+  <img src="WhatsApp Image 2026-02-28 at 21.47.17.jpeg" alt="2015 Lexus RX450h - Front 3/4 view" />
+  <img src="WhatsApp Image 2026-02-28 at 21.47.17 (1).jpeg" alt="2015 Lexus RX450h - Side view" />
+</div>
+
+<div class="content">
+
+  <!-- Specs -->
+  <div class="card">
+    <h2>Vehicle Specs</h2>
+    <div class="spec-grid">
+      <div class="spec-item"><div class="slabel">Year</div><div class="svalue">2015</div></div>
+      <div class="spec-item"><div class="slabel">Make / Model</div><div class="svalue">Lexus RX 450h</div></div>
+      <div class="spec-item"><div class="slabel">Engine</div><div class="svalue">3.5L V6 Hybrid · 270hp</div></div>
+      <div class="spec-item"><div class="slabel">Drivetrain</div><div class="svalue">AWD (4WD) — VIN confirmed</div></div>
+      <div class="spec-item"><div class="slabel">Transmission</div><div class="svalue">CVT Automatic</div></div>
+      <div class="spec-item"><div class="slabel">Fuel Type</div><div class="svalue">Strong Hybrid (Gas + Electric)</div></div>
+      <div class="spec-item"><div class="slabel">Exterior Color</div><div class="svalue">Nebula Gray Pearl</div></div>
+      <div class="spec-item"><div class="slabel">Odometer (at sale)</div><div class="svalue">~104,000–105,000 miles</div></div>
+      <div class="spec-item"><div class="slabel">Owners</div><div class="svalue">4+ (see disclosures)</div></div>
+      <div class="spec-item"><div class="slabel">VIN</div><div class="svalue" style="font-size:0.78rem;letter-spacing:0.03em;">2T2BC1BA0FC006158</div></div>
+      <div class="spec-item"><div class="slabel">Title</div><div class="svalue">Clean CA Title</div></div>
+      <div class="spec-item"><div class="slabel">License (CA)</div><div class="svalue">8WQC593</div></div>
+    </div>
+  </div>
+
+  <!-- Features -->
+  <div class="card">
+    <h2>Key Features</h2>
+    <ul class="highlight-list">
+      <li>Panoramic sliding moonroof / sunroof</li>
+      <li>19" multi-spoke alloy wheels</li>
+      <li>Chrome exterior trim package</li>
+      <li>AWD Hybrid powertrain — excellent fuel economy (~30 MPG city)</li>
+      <li>Navigation system</li>
+      <li>Blind Spot Monitor (BSM)</li>
+      <li>Adaptive Front-lighting System — headlights turn with steering</li>
+      <li>Intuitive Parking Assist System (IPA)</li>
+      <li>Smart Access — keyless entry &amp; push-button start</li>
+      <li>Lexus pre-collision system</li>
+      <li>Backup camera (factory fitted)</li>
+      <li>Direct tyre pressure monitoring (TPMS)</li>
+      <li>Front, side &amp; curtain airbags — all rows (VIN confirmed)</li>
+      <li>Power-adjustable front seats</li>
+      <li>Dual-zone automatic climate control</li>
+      <li>Bluetooth / audio connectivity</li>
+      <li>Below-average mileage for an 11-year-old vehicle (~132k typical)</li>
+    </ul>
+  </div>
+
+  <!-- Interior Condition -->
+  <div class="card full-width">
+    <h2>Interior Condition</h2>
+    <div class="interior-grid">
+      <div class="interior-item">
+        <div class="ilabel">Leather Seating</div>
+        <div class="ivalue">Good condition — free of scratches and damage on all seating surfaces</div>
+      </div>
+      <div class="interior-item">
+        <div class="ilabel">All Interior Functions</div>
+        <div class="ivalue">Fully operational — climate, audio, power seats, locks, windows all working</div>
+      </div>
+      <div class="interior-item">
+        <div class="ilabel">Cosmetic Note</div>
+        <div class="ivalue">Rear driver's seat-back fabric pocket has detached — cosmetic only, no functional impact</div>
+      </div>
+      <div class="interior-item">
+        <div class="ilabel">Overall</div>
+        <div class="ivalue">Well-maintained interior, consistent with the vehicle's documented service history</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Maintenance History -->
+  <div class="card full-width">
+    <h2>Maintenance History — All Receipts Available</h2>
+    <table class="maintenance-table">
+      <thead>
+        <tr>
+          <th>Date</th>
+          <th>Mileage</th>
+          <th>Service Performed</th>
+          <th>Shop</th>
+          <th>Cost</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Dec 2022</td>
+          <td>66,030</td>
+          <td>Major service — oil &amp; filter, <strong>all 4 tyres replaced</strong> + alignment, <strong>rear brake pads &amp; rotors</strong>, spark plugs, air &amp; cabin filters</td>
+          <td>Specialized Auto Care Center, Palo Alto</td>
+          <td>$2,742</td>
+        </tr>
+        <tr>
+          <td>Oct 2023</td>
+          <td>72,347</td>
+          <td><strong>Front brake pads &amp; rotors</strong> replaced</td>
+          <td>Specialized Auto Care Center, Palo Alto</td>
+          <td>$519</td>
+        </tr>
+        <tr>
+          <td>Aug 2024</td>
+          <td>78,518</td>
+          <td>Oil &amp; filter change — battery, brakes, belts, lights all checked OK</td>
+          <td>Jim Davis Automotive, Palo Alto</td>
+          <td>$138</td>
+        </tr>
+        <tr>
+          <td>Mar 2025</td>
+          <td>87,450</td>
+          <td>Oil &amp; filter change — battery OK, brakes OK (front 8mm / rear 7mm)</td>
+          <td>Jim Davis Automotive, Palo Alto</td>
+          <td>$138</td>
+        </tr>
+        <tr>
+          <td>Jun 2025</td>
+          <td>90,317</td>
+          <td><strong>California Smog Check</strong> &nbsp;<span class="tag tag-green">✓ Pass</span>&nbsp; Visual &amp; Functional Inspection both passed</td>
+          <td>EZ Star Smog Test Only 2, Berkeley</td>
+          <td>—</td>
+        </tr>
+        <tr>
+          <td>Aug 2025</td>
+          <td>93,467</td>
+          <td>5,000-mile service — oil, filter, tyre rotation · <strong>Transmission fluid flush</strong> · <strong>Brake fluid exchange (hybrid)</strong> · Air &amp; cabin filters replaced</td>
+          <td>Argonaut Garage, Berkeley</td>
+          <td>$646</td>
+        </tr>
+        <tr>
+          <td>Nov 23, 2025</td>
+          <td>—</td>
+          <td>Rear right tyre puncture — new 235/55R19 tyre + replacement rim fitted &nbsp;<span class="tag tag-blue">40,000-Mile Warranty</span></td>
+          <td>Orozco's Tires, Berkeley</td>
+          <td>$320</td>
+        </tr>
+        <tr>
+          <td>Dec 2025</td>
+          <td>98,750</td>
+          <td>Oil &amp; filter change — full synthetic, 5,000-mile interval</td>
+          <td>—</td>
+          <td>—</td>
+        </tr>
+        <tr>
+          <td>Jan 14–21, 2026</td>
+          <td>101,091</td>
+          <td>Auto body repair — minor front-end collision, other party at fault · OEM right headlamp, front bumper &amp; right fender, park sensor replaced, sensors recalibrated · Post-repair scan: <strong>0 fault codes</strong> &nbsp;<span class="tag tag-navy">Fully Covered by GEICO</span></td>
+          <td>G&amp;C Auto Body, Berkeley</td>
+          <td>$3,843 <span style="color:#9ca3af;font-size:0.78rem;">(insurance)</span></td>
+        </tr>
+        <tr>
+          <td style="color:#1a4f8f;">Apr 2026</td>
+          <td>—</td>
+          <td><span class="tag tag-blue">Scheduled</span>&nbsp; Oil &amp; filter change — <strong>will be completed prior to sale</strong></td>
+          <td>—</td>
+          <td>—</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Disclosures -->
+  <div class="card full-width">
+    <div class="disclosure-box">
+      <h3>Full Transparency — Known Issues &amp; Disclosures</h3>
+      <ul>
+        <li><strong>Multiple owners:</strong> This vehicle has had 4+ owners, each holding it for approximately one year. All known owners were international students based in the Bay Area — a community known for low urban mileage driving. This explains the vehicle's below-average odometer reading despite its age. Consistent service records across ownership changes demonstrate diligent maintenance throughout.</li>
+        <li><strong>Rear driver's seat-back pocket:</strong> The fabric pocket has detached from the seat-back. Cosmetic issue only — no effect on vehicle functionality.</li>
+        <li><strong>Rear right tyre &amp; rim (November 23, 2025):</strong> The vehicle sustained a puncture on the rear right tyre that also damaged the wheel rim. Both were fully replaced — new 235/55R19 tyre with 40,000-mile warranty, and a replacement rim, at Orozco's Tires, Berkeley ($320).</li>
+        <li><strong>Minor front-end collision (January 2026, gas station):</strong> The other party was at fault and their insurance (GEICO) covered all repairs in full — $0 cost to owner. Repairs included OEM right headlamp replacement, front bumper and right fender repair, park sensor replacement, and full sensor recalibration at G&amp;C Auto Body, Berkeley. Post-repair electronic diagnostic scan confirmed <strong>zero fault codes</strong> across all vehicle modules.</li>
+        <li><strong>Deferred maintenance (flagged Aug 2025):</strong> Front strut mounts, rear shock assembly (with alignment), and hood lift shock were identified as recommended future work during the August 2025 inspection. These items have not yet been completed and are reflected in the pricing.</li>
+      </ul>
+    </div>
+  </div>
+
+</div>
+
+<div class="contact-strip">
+  <strong>Berkeley, CA</strong> &nbsp;·&nbsp; Private Party Sale &nbsp;·&nbsp; June 2026
+  <div class="vin">VIN: 2T2BC1BA0FC006158 &nbsp;·&nbsp; Specs VIN-verified via NHTSA &nbsp;·&nbsp; All maintenance receipts available upon request</div>
+</div>
+
+</body>
+</html>
